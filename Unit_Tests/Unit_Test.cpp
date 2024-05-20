@@ -38,3 +38,40 @@ TEST(Member_Functions, Assigment) {
         EXPECT_EQ(10, Assigment[i]);
     }
 }
+
+/* Element_Access */
+TEST(Element_Access, At) {
+    vectorClass<int> at;
+    at.push_back(10);
+    at.push_back(20);
+    at.push_back(30);
+
+    EXPECT_EQ(at.at(1), 20);
+}
+
+TEST(Element_Access, Operator) {
+    vectorClass<int> op;
+    op.push_back(10);
+    op.push_back(20);
+    op.push_back(30);
+
+    EXPECT_EQ(op[2], 30);
+}
+
+TEST(Element_Access, Front) {
+    vectorClass<int> front;
+    front.push_back(10);
+    front.push_back(20);
+    front.push_back(30);
+
+    EXPECT_EQ(front.front(), 10);
+}
+
+TEST(Element_Access, Back) {
+    vectorClass<int> back;
+    back.push_back(10);
+    back.push_back(20);
+    back.push_back(30);
+
+    EXPECT_EQ(back.back(), 30);
+}
