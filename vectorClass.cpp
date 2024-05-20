@@ -144,3 +144,37 @@ template <typename T>
 int vectorClass<T>::max_size() const {
     return std::numeric_limits<int>::max();
 }
+
+// Function to reserve capacity
+template <typename T>
+void vectorClass<T>::reserve(int new_capacity) {
+    if (new_capacity > capacity) {
+        T* temp = new T[new_capacity];
+        for (int i = 0; i < current; i++) {
+            temp[i] = arr[i];
+        }
+        delete[] arr;
+        arr = temp;
+        capacity = new_capacity;
+    }
+}
+
+// Function to get capacity of the vector
+template <typename T>
+int vectorClass<T>::get_capacity() const {
+    return capacity;
+}
+
+// Function to shrink capacity to fit size
+template <typename T>
+void vectorClass<T>::shrink_to_fit() {
+    if (current < capacity) {
+        T* temp = new T[current];
+        for (int i = 0; i < current; i++) {
+            temp[i] = arr[i];
+        }
+        delete[] arr;
+        arr = temp;
+        capacity = current;
+    }
+}

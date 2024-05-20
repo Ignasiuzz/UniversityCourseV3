@@ -53,5 +53,8 @@ public:
     bool empty() const;
     int size() const;
     int max_size() const;
+    void reserve(int new_capacity);
+    int get_capacity() const;
+    void shrink_to_fit();
 };
 #endif // VECTORCLASS_H
