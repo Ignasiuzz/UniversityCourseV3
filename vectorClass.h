@@ -23,5 +23,11 @@ public:
     vectorClass& operator=(vectorClass&& other) noexcept; // Move assignment
     void assign(int n, const T& val);
     /* Truksta assing_range, get_allocator */
+
+    // Element access
+    T& at(int index);
+    const T& at(int index) const;
+    T& operator[](int index);
+    const T& operator[](int index) const;
 };
 #endif // VECTORCLASS_H

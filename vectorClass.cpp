@@ -68,3 +68,29 @@ void vectorClass<T>::assign(int n, const T& val) {
         push_back(val); // Add n copies of val
     }
 }
+
+// Function to get element at index
+template <typename T>
+T& vectorClass<T>::at(int index) {
+    if (index < 0 || index >= current) {
+        throw std::out_of_range("Index out of range");
+    }
+    return arr[index];
+}
+template <typename T>
+const T& vectorClass<T>::at(int index) const {
+    if (index < 0 || index >= current) {
+        throw std::out_of_range("Index out of range");
+    }
+    return arr[index];
+}
+
+// operator[] for accessing elements
+template <typename T>
+T& vectorClass<T>::operator[](int index) {
+    return arr[index];
+}
+template <typename T>
+const T& vectorClass<T>::operator[](int index) const {
+    return arr[index];
+}
