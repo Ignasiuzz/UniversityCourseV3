@@ -29,5 +29,10 @@ public:
     const T& at(int index) const;
     T& operator[](int index);
     const T& operator[](int index) const;
+    T& front();
+    const T& front() const;
+    T& back();
+    const T& back() const;
+    /* Truksta data */
 };
 #endif // VECTORCLASS_H

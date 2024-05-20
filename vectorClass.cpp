@@ -94,3 +94,35 @@ template <typename T>
 const T& vectorClass<T>::operator[](int index) const {
     return arr[index];
 }
+
+// Function to get front element
+template <typename T>
+T& vectorClass<T>::front() {
+    if (empty()) {
+        throw std::out_of_range("Vector is empty");
+    }
+    return arr[0];
+}
+template <typename T>
+const T& vectorClass<T>::front() const {
+    if (empty()) {
+        throw std::out_of_range("Vector is empty");
+    }
+    return arr[0];
+}
+
+// Function to get back element
+template <typename T>
+T& vectorClass<T>::back() {
+    if (empty()) {
+        throw std::out_of_range("Vector is empty");
+    }
+    return arr[current - 1];
+}
+template <typename T>
+const T& vectorClass<T>::back() const {
+    if (empty()) {
+        throw std::out_of_range("Vector is empty");
+    }
+    return arr[current - 1];
+}
