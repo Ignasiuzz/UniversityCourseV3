@@ -56,3 +56,15 @@ vectorClass<T>& vectorClass<T>::operator=(vectorClass&& other) noexcept {
     }
     return *this;
 }
+
+// Assigns values to the container 
+template <typename T>
+void vectorClass<T>::assign(int n, const T& val) {
+    clear(); // Clear the current contents
+    if (capacity < n) {
+        reserve(n); // Reserve enough space if needed
+    }
+    for (int i = 0; i < n; ++i) {
+        push_back(val); // Add n copies of val
+    }
+}

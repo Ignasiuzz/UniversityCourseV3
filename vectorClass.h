@@ -21,5 +21,7 @@ public:
     vectorClass& operator=(const vectorClass& other); // Copy assignment
     vectorClass(vectorClass&& other) noexcept; // Move constructor
     vectorClass& operator=(vectorClass&& other) noexcept; // Move assignment
+    void assign(int n, const T& val);
+    /* Truksta assing_range, get_allocator */
 };
 #endif // VECTORCLASS_H
