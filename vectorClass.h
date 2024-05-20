@@ -61,5 +61,13 @@ public:
     void clear();
     void insert(int index, T data);
     void erase(int index);
+    void push_back(T data);
+    void pop_back();
+    void resize(int new_size);
+    void swap(vectorClass<T>& other);
+    /* Truksta insert_range, append_range, emplace, emplace_back */
+
+    /* Isviso truksta: assing_range, get_allocator, data, insert_range, append_range, emplace, emplace_back */
+    /* Realizuota 25 is 32 funciju, kas yra 78% */
 };
 #endif // VECTORCLASS_H

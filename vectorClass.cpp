@@ -218,3 +218,63 @@ void vectorClass<T>::erase(int index) {
     }
     current--;
 }
+
+// Function to add an element at the end
+template <typename T>
+void vectorClass<T>::push_back(T data) {
+    if (current == capacity) {
+        T* temp = new T[2 * capacity];
+        for (int i = 0; i < capacity; i++) {
+            temp[i] = arr[i];
+        }
+        delete[] arr;
+        capacity *= 2;
+        arr = temp;
+    }
+    arr[current] = data;
+    current++;
+}
+
+// Delete last element
+template <typename T>
+void vectorClass<T>::pop_back() {
+    if (current > 0) {
+        current--;
+    }
+}
+
+// Function to resize the vector
+template <typename T>
+void vectorClass<T>::resize(int new_size) {
+    if (new_size < current) {
+        current = new_size;
+    } else {
+        if (new_size > capacity) {
+            T* temp = new T[new_size];
+            for (int i = 0; i < current; i++) {
+                temp[i] = arr[i];
+            }
+            delete[] arr;
+            arr = temp;
+            capacity = new_size;
+        }
+        for (int i = current; i < new_size; i++) {
+            arr[i] = T();
+        }
+        current = new_size;
+    }
+}
+
+// Swaps vectors
+template <typename T>
+void vectorClass<T>::swap(vectorClass<T>& other) {
+    std::swap(arr, other.arr);
+    std::swap(capacity, other.capacity);
+    std::swap(current, other.current);
+}
+
+// Explicit template for supported types
+template class vectorClass<int>;
+template class vectorClass<double>;
+template class vectorClass<char>;
+template class vectorClass<std::string>;
