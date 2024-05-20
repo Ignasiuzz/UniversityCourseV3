@@ -1,19 +1,12 @@
 #ifndef HEADER_H // redefinition apsauga
 #define HEADER_H
 
-struct Studentas {
-    string Vardas, Pavarde;
-    vector<int> namudarbas;
-    int egzaminorez;
-};
+#include "VectorIncludes.h"
+#include "studentas.h"
 
 void input1(Studentas& duom);
 void input2(Studentas& duom);
 void input3(Studentas& duom, int n);
-double Vidurkis(const vector<int>& namudarbas);
-double Mediana(const vector<int>& namudarbas);
-double GalutinisVid(const Studentas& duom);
-double GalutinisMed(const Studentas& duom);
 void OutputBy(const vector<Studentas>& student);
 void manualmode();
 void readingmode(const string& fileName);
