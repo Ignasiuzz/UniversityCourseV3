@@ -1,6 +1,6 @@
-#include "VectorIncludes.h"
+#include "MainIncludes.h"
 #include "Studentas.h"
-//g++ -o program test.cpp Studentas.cpp
+//g++ -o Test_Program Test.cpp Studentas.cpp
 
 void test_constructors() {
     // Test default constructor
