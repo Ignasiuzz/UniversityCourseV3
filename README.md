@@ -1,117 +1,163 @@
-# UniversityCourseV2
-Objektinio programavimo antroji užduotis
+# UniversityCourseV3
+Objektinio programavimo paskutinioji užduotis
 
-# Spartos analize  
-## Be oprimizatoriaus
-100.000 studentų  
-Struct. Student sorting to two groups took 0.0304037 seconds.  
-Class. Student sorting to two groups took 0.0443925 seconds.  
-1.000.000 studentų   
-Struct. Student sorting to two groups took 0.319136 seconds.  
-Class. Student sorting to two groups took 0.600509 seconds.  
+# Efektyvumo/spartos analizė
+Number of `int` type elements filling `vectors` using `push_back()` funkction.
+| Number of elements | std::vector | vectorClass |
+| :---: | :---: | :---: |
+| 10000 | 0.000152 seconds. | 0.00009 seconds. |
+| 100000 | 0.0010375 seconds. | 0.0007579 seconds. |
+| 1000000 | 0.0086524 seconds. | 0.0059382 seconds. |
+| 10000000 | 0.0767485 seconds. | 0.0648773 seconds. |
+| 100000000 | 0.717261 seconds. | 0.543378 seconds. |
 
-## Kompiliatoriaus optimizavimo lygiai 
-### 100.000 studentų
-| Optimization | Struct | Class | File size Struct | File size Class |
-| :---: | :---: | :---: | :---: | :---: |
-| O1 | 0.0117796 seconds. | 0.0195176 seconds. | 262 KB | 254 KB |
-| O2 | 0.0114957 seconds. | 0.0205766 seconds. | 266 KB | 256 KB |
-| O3 | 0.0108180 seconds. | 0.0202935 seconds. | 264 KB | 259 KB |
+# vectorClass Functions
 
+This part outlines some of the `functions` used in my custom `vectorClass`.
+## 1. `push_back`
+**Code Example:**
 
-### 1.000.000 studentų
-| Optimization | Struct | Class | File size Struct | File size Class |
-| :---: | :---: | :---: | :---: | :---: | 
-| O1 | 0.127661 seconds. | 0.345793 seconds. |262 KB| 254 KB |
-| O2 | 0.115778 seconds. | 0.339243 seconds. |266 KB| 256 KB | 
-| O3 | 0.115472 seconds. | 0.333918 seconds. |264 KB| 259 KB |
+```cpp
+#include <iostream>
+#include "vectorClass.h"
 
-# Studentas Class
-## Class Structure  
-`Zmogus` abstrakčioje klasėje yra šie nariai:  
-- `Vardas_`: String tipo studento vardas.  
-- `Pavarde_`: String tipo studento pavarde.
-
-`Studentas` klasėje yra šie nariai:  
-- `egzaminas_`: Double tipo egzamino pažymys.  
-- `namudarbas_`: Double vectoriaus tipo namų darbų pažymiai.  
-
-## Data input
-
-Studento duomenų (Vardas, Pavarde, Namu darbas, Egzaminas) rankinis įvedimas:  
-`.setVardas();`  
-`.setPavarde();`  
-`.setNamudarbas();`  
-`.setEgzaminas();`  
-
-    Studentas data;
-    data.setVardas("John");
-    data.setPavarde("Doe");
-    data.setNamudarbas({8, 6, 9, 5});
-    data.setEgzaminas(7);
-
-Studento duomenų (Vardas, Pavarde, Namu darbas, Egzaminas) programoje įvedimo pvz:  
-
-    Studentas data;
-    cout << "Iveskite studento varda: ";
-    cin >> temp;
-    data.setVardas(temp);
-
-    cout << "Iveskite studento pavarde: ";
-    cin >> temp;
-    data.setPavarde(temp);
-
-    vector<double> namudarbas;
-    int NumberOfInputs = 5;
-    for (int i = 0; i < NumberOfInputs; i++) {
-        cout << "Iveskite studento namu darbo rezultata: ";
-        cin >> temp;
-        namudarbas.push_back(temp);
+void test_push_back() {
+    vectorClass<int> myVec;
+    myVec.push_back(1);
+    myVec.push_back(2);
+    myVec.push_back(3);
+    std::cout << "vectorClass: ";
+    for (int i = 0; i < myVec.size(); ++i) {
+        std::cout << myVec[i] << " ";
     }
-    duom.setNamudarbas(namudarbas);
+    std::cout << std::endl;
+}
 
-    cout << "Iveskite studento egzamino rezultata: ";
-    cin >> temp;
-    data.setEgzaminas(temp);
-Studento duomenų (Vardas, Pavarde, Namu darbas, Egzaminas) is failo įvedimas pagal formata kuris pateiktas failuose pavyzdys. Pvz. 1000_GeneratedStudents.txt:  
+int main() {
+    test_push_back();
+    system("pause");
+}
+```
+```
+Output:
+std::vector: 1 2 3 
+vectorClass: 1 2 3 
+```
+## 2. `operator[]`
+**Code Example:**
 
-    vector<Studentas> student;
-    ifstream inputFile("1000_GeneratedStudents.txt");
+```cpp
+#include <iostream>
+#include "vectorClass.h"
 
-    string line;
-    getline(inputFile, line); // Naikinama pirma header eilute
+void test_operator_index() {
+    vectorClass<int> myVec;
+    myVec.push_back(10);
+    myVec.push_back(20);
+    myVec.push_back(30);
+    std::cout << "vectorClass: " << myVec[0] << " " << myVec[1] << " " << myVec[2] << std::endl;
+}
 
-    // Skaitoma ir apdorojama visa eilute
-    while (getline(inputFile, line)) {
-        Studentas duom;
-        istringstream iss(line);
-        duom.readStudent(iss);
-        student.push_back(duom);
+int main() {
+    test_operator_index();
+    system("pause");
+}
+```
+```
+Output:
+std::vector: 10 20 30
+vectorClass: 10 20 30
+```
+## 3. `resize`
+**Code Example:**
+
+```cpp
+#include <iostream>
+#include "vectorClass.h"
+
+void test_resize() {
+    vectorClass<int> myVec;
+    myVec.push_back(1);
+    myVec.push_back(2);
+    myVec.push_back(3);
+    myVec.resize(5);
+    std::cout << "vectorClass (resize to 5): ";
+    for (int i = 0; i < myVec.size(); ++i) {
+        std::cout << myVec[i] << " ";
     }
+    std::cout << std::endl;
+}
 
-## Data output
-Studento duomenų (Vardas, Pavarde, Namu darbas, Egzaminas, GalutinisMed, GalutinisVid) išvedimas:   
-`.Vardas();`  
-`.Pavarde();`  
-`.Namudarbas();`  
-`.Egzaminas();`  
-`GalutinisMed();`  
-`GalutinisVid();`  
+int main() {
+    test_resize();
+    system("pause");
+}
 
-    Studentas data;
-    cout << "Studento vardas " << data.Vardas() << endl;
-    cout << "Studento pavarde " << data.Pavarde() << endl;
-    cout << "Studento pazymiai ";
-    for (double grade : data.Namudarbas()) {
-        std::cout << grade << " ";
+```
+```
+Output:
+std::vector (resize to 5): 1 2 3 0 0 
+vectorClass (resize to 5): 1 2 3 0 0 
+```
+## 4. `at`
+**Code Example:**
+
+```cpp
+#include <iostream>
+#include "vectorClass.h"
+
+void test_at() {
+    vectorClass<int> myVec;
+    myVec.push_back(100);
+    myVec.push_back(200);
+    myVec.push_back(300);
+    try {
+        std::cout << "vectorClass: " << myVec.at(1) << std::endl;
+        std::cout << "vectorClass: " << myVec.at(3) << std::endl; // This will throw
+    } catch (const std::out_of_range& e) {
+        std::cout << "vectorClass out_of_range exception: " << e.what() << std::endl;
     }
-    cout << "Studento egzamino rezultatas " << data.Egzaminas() << endl;
-    cout << "Galutinis vidurkis naudojant mediana " << GalutinisMed(data);
-    cout << "Galutinis vidurkis paprastu budu " << GalutinisVid(data);
-## Usage
+}
 
-Norint naudotis `Studentas` klase, turite atsisiųsti failus `Studentas.h` `Studentas.cpp` ir `Zmogus.h`. Savo kode turite inlcudinti `Studentas.h`.
+int main() {
+    test_at();
+    system("pause");
+}
+```
+```
+Output:
+std::vector: 200
+std::vector out_of_range exception: vector::_M_range_check: __n (which is 3) >= this->size() (which is 3)
+vectorClass: 200
+vectorClass out_of_range exception: Index out of range
+```
+## 5. `insert`
+**Code Example:**
 
-    #include "Studentas.h"
+```cpp
+#include <iostream>
+#include "vectorClass.h"
 
+void test_insert() {
+    vectorClass<int> myVec;
+    myVec.push_back(1);
+    myVec.push_back(2);
+    myVec.push_back(4);
+    myVec.insert(2, 3);
+    std::cout << "vectorClass: ";
+    for (int i = 0; i < myVec.size(); ++i) {
+        std::cout << myVec[i] << " ";
+    }
+    std::cout << std::endl;
+}
 
+int main() {
+    test_insert();
+    return 0;
+}
+```
+```
+Output:
+std::vector: 1 2 3 4 
+vectorClass: 1 2 3 4 
+```
