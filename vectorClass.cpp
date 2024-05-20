@@ -178,3 +178,43 @@ void vectorClass<T>::shrink_to_fit() {
         capacity = current;
     }
 }
+
+// Function to clear the vector
+template <typename T>
+void vectorClass<T>::clear() {
+    current = 0;
+}
+
+// Function to add element at any index
+template <typename T>
+void vectorClass<T>::insert(int index, T data) {
+    if (index < 0 || index > current) {
+        throw std::out_of_range("Index out of range");
+    }
+    if (current == capacity) {
+        T* temp = new T[2 * capacity];
+        for (int i = 0; i < capacity; i++) {
+            temp[i] = arr[i];
+        }
+        delete[] arr;
+        capacity *= 2;
+        arr = temp;
+    }
+    for (int i = current; i > index; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[index] = data;
+    current++;
+}
+
+// Function to remove element at any index
+template <typename T>
+void vectorClass<T>::erase(int index) {
+    if (index < 0 || index >= current) {
+        throw std::out_of_range("Index out of range");
+    }
+    for (int i = index; i < current - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    current--;
+}

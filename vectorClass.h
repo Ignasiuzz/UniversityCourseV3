@@ -56,5 +56,10 @@ public:
     void reserve(int new_capacity);
     int get_capacity() const;
     void shrink_to_fit();
+
+    // Modifiers
+    void clear();
+    void insert(int index, T data);
+    void erase(int index);
 };
 #endif // VECTORCLASS_H
