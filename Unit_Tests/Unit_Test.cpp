@@ -147,3 +147,86 @@ TEST(Capacity, Shrink_To_Fit) {
     EXPECT_EQ(shrink.size(), 3);
     EXPECT_EQ(shrink.get_capacity(), 3);
 }
+
+/* Modifiers */
+TEST(Modifiers, Clear) {
+    vectorClass<int> clear;
+    clear.push_back(1);
+    clear.push_back(2);
+    clear.push_back(3);
+
+    clear.clear();
+
+    EXPECT_TRUE(clear.empty());
+}
+
+TEST(Modifiers, Insert) {
+    vectorClass<int> insert;
+    insert.push_back(1);
+    insert.push_back(3);
+
+    insert.insert(1, 2);
+
+    EXPECT_EQ(insert.size(), 3);
+    EXPECT_EQ(insert[1], 2);
+}
+
+TEST(Modifiers, Erase) {
+    vectorClass<int> erase;
+    erase.push_back(1);
+    erase.push_back(2);
+    erase.push_back(3);
+
+    erase.erase(1);
+
+    EXPECT_EQ(erase.size(), 2);
+    EXPECT_EQ(erase[1], 3);
+}
+
+TEST(Modifiers, PushBack) {
+    vectorClass<int> push;
+    push.push_back(1);
+    EXPECT_EQ(push.size(), 1);
+    EXPECT_EQ(push[0], 1);
+}
+
+TEST(Modifiers, PopBack) {
+    vectorClass<int> pop;
+    pop.push_back(1);
+    pop.push_back(2);
+
+    pop.pop_back();
+
+    EXPECT_EQ(pop.size(), 1);
+    EXPECT_EQ(pop[0], 1);
+}
+
+TEST(Modifiers, Resize) {
+    vectorClass<int> resize;
+    resize.push_back(1);
+    resize.push_back(2);
+    resize.push_back(3);
+
+    resize.resize(2);
+
+    EXPECT_EQ(resize.size(), 2);
+    EXPECT_EQ(resize[0], 1);
+    EXPECT_EQ(resize[1], 2);
+}
+
+TEST(Modifiers, Swap) {
+    vectorClass<int> swap1;
+    vectorClass<int> swap2;
+    swap1.push_back(1);
+    swap1.push_back(2);
+
+    swap2.push_back(3);
+
+    swap1.swap(swap2);
+
+    EXPECT_EQ(swap1.size(), 1);
+    EXPECT_EQ(swap2.size(), 2);
+    EXPECT_EQ(swap1[0], 3);
+    EXPECT_EQ(swap2[0], 1);
+    EXPECT_EQ(swap2[1], 2);
+}
