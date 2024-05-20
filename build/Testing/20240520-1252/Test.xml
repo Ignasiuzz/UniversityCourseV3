@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240520-1252-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.25.0-rc4"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="BlackBox"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="1"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="34722"
+	TotalPhysicalMemory="32674"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3693"
+	>
+	<Testing>
+		<StartDateTime>May 20 18:07 FLE Daylight Time</StartDateTime>
+		<StartTestTime>1716217634</StartTestTime>
+		<TestList>
+			<Test>./Unit_Tests/Test_CMake</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>Test_CMake</Name>
+			<Path>./Unit_Tests</Path>
+			<FullName>./Unit_Tests/Test_CMake</FullName>
+			<FullCommandLine>C:\Users\ignol\Documents\GitHub\UniversityCourseV3\build\Unit_Tests\Test_CMake.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.155151</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\ignol\Documents\GitHub\UniversityCourseV3\build\Unit_Tests\Test_CMake.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNU0tvwjAMvvdX+AgHqvHYZdIOjA02TQwJjV1oVbXBtNHapIoTNv79GspQKajUl6by93DseGmE4CKGLOSi04WtkhlMHrwVoSKPx0Km3rNkJkOhyZtx/WoibyX4rkhzvZ9Iowi/hl4sZZyiRtLVIynmxfYUWHmXMWf9eAoflkfvQR8siEr3+8MPkOHF13XWvVP4MEtlFKYlAMWOKylsZUCoeyavgYdV1TlmEapgagTTXApy1rBcfcAh/IusO5H5PhgT8djqF+AyFu+3wdC5g4y6NwzmcoclR7RwqKHbWbQt/7Ly1l0sGaClDtOuc04cVYkvKVqHYMwYUq355zl3XKv3In319jXUIkcVaqkapf5BbQSnxVNrLuyAaCP1FLLvRiULuDqLhpY2TWJQpb3p8tLHIbhusTWfCSfIQ6VBbkEnWC6YNDo3Gn5CAoVZ8QI3QFwwBF4s3y9D3FAJThRSItONZffvBiOI9nZ1fecPaFhkTA==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 20 18:07 FLE Daylight Time</EndDateTime>
+		<EndTestTime>1716217634</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
