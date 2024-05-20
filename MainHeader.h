@@ -1,7 +1,7 @@
 #ifndef HEADER_H // redefinition apsauga
 #define HEADER_H
 
-#include "VectorIncludes.h"
+#include "MainIncludes.h"
 #include "studentas.h"
 
 void input1(Studentas& duom);

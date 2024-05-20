@@ -1,7 +1,7 @@
-#include "VectorIncludes.h"
-#include "VectorHeader.h"
+#include "MainIncludes.h"
+#include "MainHeader.h"
 #include "Studentas.h"
-//g++ -o program Vector.cpp Studentas.cpp
+//g++ -o Program Main.cpp Studentas.cpp
 
 int main() {
     cout << "---------------------------------------- " << endl;
