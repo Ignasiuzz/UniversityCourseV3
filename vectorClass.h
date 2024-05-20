@@ -15,5 +15,11 @@ public:
     // Destructor and Constructor
     vectorClass();
     ~vectorClass();
+
+    // Member functions
+    vectorClass(const vectorClass& other); // Copy constructor
+    vectorClass& operator=(const vectorClass& other); // Copy assignment
+    vectorClass(vectorClass&& other) noexcept; // Move constructor
+    vectorClass& operator=(vectorClass&& other) noexcept; // Move assignment
 };
 #endif // VECTORCLASS_H
