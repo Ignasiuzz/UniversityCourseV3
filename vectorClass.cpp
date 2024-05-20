@@ -126,3 +126,21 @@ const T& vectorClass<T>::back() const {
     }
     return arr[current - 1];
 }
+
+// Function to check if the vector is empty
+template <typename T>
+bool vectorClass<T>::empty() const {
+    return current == 0;
+}
+
+// Function to get size of the vector
+template <typename T>
+int vectorClass<T>::size() const {
+    return current;
+}
+
+// Function to get the maximum size of the vector
+template <typename T>
+int vectorClass<T>::max_size() const {
+    return std::numeric_limits<int>::max();
+}

@@ -48,5 +48,10 @@ public:
     const_reverse_iterator rbegin() const noexcept { return const_reverse_iterator(end()); }
     reverse_iterator rend() noexcept { return reverse_iterator(begin()); }
     const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
+
+    // Capacity
+    bool empty() const;
+    int size() const;
+    int max_size() const;
 };
 #endif // VECTORCLASS_H
