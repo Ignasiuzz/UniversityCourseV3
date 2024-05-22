@@ -22,7 +22,6 @@ public:
     vectorClass(vectorClass&& other) noexcept; // Move constructor
     vectorClass& operator=(vectorClass&& other) noexcept; // Move assignment
     void assign(int n, const T& val);
-    /* Truksta assing_range, get_allocator */
 
     // Element access
     T& at(int index);
@@ -33,7 +32,6 @@ public:
     const T& front() const;
     T& back();
     const T& back() const;
-    /* Truksta data */
 
     // Iterators
     typedef T* iterator;
@@ -65,9 +63,5 @@ public:
     void pop_back();
     void resize(int new_size);
     void swap(vectorClass<T>& other);
-    /* Truksta insert_range, append_range, emplace, emplace_back */
-
-    /* Isviso truksta: assing_range, get_allocator, data, insert_range, append_range, emplace, emplace_back */
-    /* Realizuota 25 is 32 funciju, kas yra 78% */
 };
 #endif // VECTORCLASS_H
