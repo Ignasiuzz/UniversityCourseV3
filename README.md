@@ -1,5 +1,5 @@
 # UniversityCourseV3
-Objektinio programavimo paskutinioji užduotis
+Objektinio programavimo paskutinioji užduotis. Sukurtas `vectorClass` konteineris padengiantis `std::vector` konteinerio metodus ir pilnai veikiantis su v1.5 programos versija.
 
 # Efektyvumo/spartos analizė
 Number of `int` type elements filling `vectors` using `push_back()` funkction.
@@ -11,8 +11,40 @@ Number of `int` type elements filling `vectors` using `push_back()` funkction.
 | 10000000 | 0.0767485 seconds. | 0.0648773 seconds. |
 | 100000000 | 0.717261 seconds. | 0.543378 seconds. |
 
-# vectorClass Functions
+# Atminties perskirstymai
+`vectorClass` ir `std::vector` užpildant vektorių 10.000.000 elementų įvyksta **27** atminties perskirstymai. Perskirstymas įvyksta tada, kai yra patenkinama sąlyga: `capacity() == size()`, t.y. kai nelieka vietos `capacity()` naujiems elementams.
+# Spartos analizė
+### Failo nuskaitymas
+| Studentų įrašų skaičius | std::vector | vectorClass |
+| :---: | :---: | :---: |
+| 100.000 | 2.32839 seconds. | 2.34903 seconds. |
+| 1.000.000 | 22.8893 seconds. | 23.1926 seconds. |
+| 10.000.000 | 218.92 seconds. | 233.481 seconds. |
 
+### Studentų rušiavimas į dvi grupes
+| Studentų įrašų skaičius | std::vector | vectorClass |
+| :---: | :---: | :---: |
+| 100.000 | 0.0363991 seconds. | 0.0307202 seconds. |
+| 1.000.000 | 0.364148 seconds. | 0.40457 seconds. |
+| 10.000.000 | 3.49419 seconds. | 3.98185 seconds. |
+
+### Studentų rikiavimas didejimo tvarka
+| Studentų įrašų skaičius | std::vector | vectorClass |
+| :---: | :---: | :---: |
+| 100.000 | 0.221569 seconds. | 0.207835 seconds. |
+| 1.000.000 | 2.61153 seconds. | 2.56135 seconds. |
+| 10.000.000 | 34.2261 seconds. | 32.7805 seconds. |
+
+### Studentų išvedimas i failą
+| Studentų įrašų skaičius | std::vector | vectorClass |
+| :---: | :---: | :---: |
+| 100.000 | 0.736306 seconds. | 0.882708 seconds. |
+| 1.000.000 | 7.33968 seconds. | 7.32049 seconds. |
+| 10.000.000 | 72.7425 seconds. | 70.5485 seconds. |
+
+# System
+All the test were ran on `ryzen 5 5600x`, `32gb ddr4 3600mhz`, `rtx 4060`, `1m.2 samsung ssd`.
+# vectorClass Functions
 This part outlines some of the `functions` used in my custom `vectorClass`.
 ## 1. `push_back`
 **Code Example:**
