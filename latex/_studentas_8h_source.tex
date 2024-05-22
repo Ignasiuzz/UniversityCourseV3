@@ -1,0 +1,56 @@
+\doxysection{Studentas.\+h}
+\hypertarget{_studentas_8h_source}{}\label{_studentas_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENTAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENTAS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Zmogus.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_studentas}{Studentas}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zmogus}{Zmogus}}\{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ egzaminas\_;}
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<double>\ namudarbas\_;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Default\ konstruktoriai}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}()\ :\ \mbox{\hyperlink{class_zmogus}{Zmogus}}(),\ egzaminas\_(0),\ namudarbas\_(\{\})\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{keyword}{const}\ std::string\&\ vardas,\ \textcolor{keyword}{const}\ std::string\&\ pavarde,\ \textcolor{keywordtype}{double}\ egzaminas,\ \textcolor{keyword}{const}\ std::vector<double>\&\ namudarbas)\ :\ \mbox{\hyperlink{class_zmogus}{Zmogus}}(vardas,\ pavarde),\ egzaminas\_(egzaminas),\ namudarbas\_(namudarbas)\ \{\}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Rule\ of\ Five}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_studentas}{\string~Studentas}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ other);\ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}(\mbox{\hyperlink{class_studentas}{Studentas}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ other);\ \textcolor{comment}{//\ Copy\ assignment}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ operator=(\mbox{\hyperlink{class_studentas}{Studentas}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ Move\ assignment}}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Outputeriai}}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ Vardas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Vardas\_;\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ Pavarde()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Pavarde\_;\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ Egzaminas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egzaminas\_;\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<double>\ Namudarbas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ namudarbas\_;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Set'eriai}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ std::string\&\ vardas);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ std::string\&\ pavarde);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setEgzaminas(\textcolor{keywordtype}{double}\ egzaminas);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ setNamudarbas(\textcolor{keyword}{const}\ std::vector<double>\&\ namudarbas);}
+\DoxyCodeLine{00038\ \ \ \ \ std::istream\&\ readStudent(std::istream\&);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Calculations}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{double}\ GalutinisVid(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ duom);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{double}\ GalutinisMed(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\&\ duom);}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Static\ functions\ for\ calculations}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ Vidurkis(\textcolor{keyword}{const}\ std::vector<double>\&\ namudarbas);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ Mediana(\textcolor{keyword}{const}\ std::vector<double>\&\ namudarbas);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Virtualios\ funkcijos\ deklaracija,\ kad\ klase\ Zmogus\ butu\ abstrakti}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ doSomething();}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

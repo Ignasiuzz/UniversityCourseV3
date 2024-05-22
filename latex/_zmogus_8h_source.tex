@@ -1,0 +1,34 @@
+\doxysection{Zmogus.\+h}
+\hypertarget{_zmogus_8h_source}{}\label{_zmogus_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ZMOGUS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ZMOGUS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zmogus}{Zmogus}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00006\ \ \ \ \ std::string\ Vardas\_;}
+\DoxyCodeLine{00007\ \ \ \ \ std::string\ Pavarde\_;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ Default\ konstruktorius}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_zmogus}{Zmogus}}()\ :\ Vardas\_(\textcolor{stringliteral}{"{}"{}}),\ Pavarde\_(\textcolor{stringliteral}{"{}"{}})\ \{\}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_zmogus}{Zmogus}}(\textcolor{keyword}{const}\ std::string\&\ vardas,\ \textcolor{keyword}{const}\ std::string\&\ pavarde)\ :\ Vardas\_(vardas),\ Pavarde\_(pavarde)\ \{\}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Virtualus\ destruktorius}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_zmogus}{\string~Zmogus}}()\ \{\}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Virtualus\ outputeriai}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ Vardas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Vardas\_;\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ Pavarde()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Pavarde\_;\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Virtualus\ set'eriai}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ std::string\&\ vardas)\ \{\ Vardas\_\ =\ vardas;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ std::string\&\ pavarde)\ \{\ Pavarde\_\ =\ pavarde;\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Virtuali\ funkcija\ be\ realizacijos\ tam,\ kad\ klase\ Zmogus\ butu\ abstrakti}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ doSomething()\ =\ 0;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

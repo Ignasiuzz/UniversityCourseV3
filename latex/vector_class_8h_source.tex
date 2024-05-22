@@ -1,0 +1,78 @@
+\doxysection{vector\+Class.\+h}
+\hypertarget{vector_class_8h_source}{}\label{vector_class_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VECTORCLASS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VECTORCLASS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classvector_class}{vectorClass}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ T*\ arr;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ current;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Destructor\ and\ Constructor}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classvector_class}{\string~vectorClass}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Member\ functions}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvector_class}{vectorClass}}\&\ other);\ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvector_class}{vectorClass}}\&\ other);\ \textcolor{comment}{//\ Copy\ assignment}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass}}(\mbox{\hyperlink{classvector_class}{vectorClass}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass}}\&\ operator=(\mbox{\hyperlink{classvector_class}{vectorClass}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ Move\ assignment}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ assign(\textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ T\&\ val);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{/*\ Truksta\ assing\_range,\ get\_allocator\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Element\ access}}
+\DoxyCodeLine{00028\ \ \ \ \ T\&\ at(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ at(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ T\&\ operator[](\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ operator[](\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ T\&\ front();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ front()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ T\&\ back();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ back()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{/*\ Truksta\ data\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Iterators}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typedef}\ T*\ iterator;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ T*\ const\_iterator;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ std::reverse\_iterator<iterator>\ reverse\_iterator;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ std::reverse\_iterator<const\_iterator>\ const\_reverse\_iterator;}
+\DoxyCodeLine{00043\ \ \ \ \ iterator\ begin()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ arr;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ const\_iterator\ begin()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ arr;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ iterator\ end()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ arr\ +\ current;\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ const\_iterator\ end()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ arr\ +\ current;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ reverse\_iterator\ rbegin()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ reverse\_iterator(end());\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ const\_reverse\_iterator\ rbegin()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(end());\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ reverse\_iterator\ rend()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ reverse\_iterator(begin());\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ const\_reverse\_iterator\ rend()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(begin());\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Capacity}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ empty()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ reserve(\textcolor{keywordtype}{int}\ new\_capacity);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_capacity()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ shrink\_to\_fit();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Modifiers}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keywordtype}{int}\ index,\ T\ data);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ erase(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ push\_back(T\ data);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ pop\_back();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{int}\ new\_size);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ swap(vectorClass<T>\&\ other);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ Truksta\ insert\_range,\ append\_range,\ emplace,\ emplace\_back\ */}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{/*\ Isviso\ truksta:\ assing\_range,\ get\_allocator,\ data,\ insert\_range,\ append\_range,\ emplace,\ emplace\_back\ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{/*\ Realizuota\ 25\ is\ 32\ funciju,\ kas\ yra\ 78\%\ */}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VECTORCLASS\_H}}
+
+\end{DoxyCode}

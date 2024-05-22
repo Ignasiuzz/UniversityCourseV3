@@ -1,0 +1,252 @@
+\chapter{University\+Course\+V3}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{UniversityCourseV3@{UniversityCourseV3}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+Objektinio programavimo paskutinioji užduotis. Sukurtas {\ttfamily \doxylink{classvector_class}{vector\+Class}} konteineris padengiantis {\ttfamily std\+::vector} konteinerio metodus ir pilnai veikiantis su v1.\+5 programos versija.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Efektyvumo/spartos analizė}{Efektyvumo/spartos analizė}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Number of {\ttfamily int} type elements filling {\ttfamily vectors} using {\ttfamily push\+\_\+back()} funkction. \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Number of elements   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Number of elements   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endhead
+\PBS\centering 10000   &\PBS\centering 0.\+000152 seconds.   &\PBS\centering 0.\+00009 seconds.    \\\cline{1-3}
+\PBS\centering 100000   &\PBS\centering 0.\+0010375 seconds.   &\PBS\centering 0.\+0007579 seconds.    \\\cline{1-3}
+\PBS\centering 1000000   &\PBS\centering 0.\+0086524 seconds.   &\PBS\centering 0.\+0059382 seconds.    \\\cline{1-3}
+\PBS\centering 10000000   &\PBS\centering 0.\+0767485 seconds.   &\PBS\centering 0.\+0648773 seconds.    \\\cline{1-3}
+\PBS\centering 100000000   &\PBS\centering 0.\+717261 seconds.   &\PBS\centering 0.\+543378 seconds.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Atminties perskirstymai}{Atminties perskirstymai}}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\ttfamily \doxylink{classvector_class}{vector\+Class}} ir {\ttfamily std\+::vector} užpildant vektorių 10.\+000.\+000 elementų įvyksta {\bfseries{27}} atminties perskirstymai. Perskirstymas įvyksta tada, kai yra patenkinama sąlyga\+: {\ttfamily capacity() == size()}, t.\+y. kai nelieka vietos {\ttfamily capacity()} naujiems elementams. \hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Spartos analizė}{Spartos analizė}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Failo nuskaitymas}{Failo nuskaitymas}}\label{md__r_e_a_d_m_e_autotoc_md4}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endhead
+\PBS\centering 100.\+000   &\PBS\centering 2.\+32839 seconds.   &\PBS\centering 2.\+34903 seconds.    \\\cline{1-3}
+\PBS\centering 1.\+000.\+000   &\PBS\centering 22.\+8893 seconds.   &\PBS\centering 23.\+1926 seconds.    \\\cline{1-3}
+\PBS\centering 10.\+000.\+000   &\PBS\centering 218.\+92 seconds.   &\PBS\centering 233.\+481 seconds.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Studentų rušiavimas į dvi grupes}{Studentų rušiavimas į dvi grupes}}\label{md__r_e_a_d_m_e_autotoc_md5}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endhead
+\PBS\centering 100.\+000   &\PBS\centering 0.\+0363991 seconds.   &\PBS\centering 0.\+0307202 seconds.    \\\cline{1-3}
+\PBS\centering 1.\+000.\+000   &\PBS\centering 0.\+364148 seconds.   &\PBS\centering 0.\+40457 seconds.    \\\cline{1-3}
+\PBS\centering 10.\+000.\+000   &\PBS\centering 3.\+49419 seconds.   &\PBS\centering 3.\+98185 seconds.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Studentų rikiavimas didejimo tvarka}{Studentų rikiavimas didejimo tvarka}}\label{md__r_e_a_d_m_e_autotoc_md6}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endhead
+\PBS\centering 100.\+000   &\PBS\centering 0.\+221569 seconds.   &\PBS\centering 0.\+207835 seconds.    \\\cline{1-3}
+\PBS\centering 1.\+000.\+000   &\PBS\centering 2.\+61153 seconds.   &\PBS\centering 2.\+56135 seconds.    \\\cline{1-3}
+\PBS\centering 10.\+000.\+000   &\PBS\centering 34.\+2261 seconds.   &\PBS\centering 32.\+7805 seconds.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Studentų išvedimas i failą}{Studentų išvedimas i failą}}\label{md__r_e_a_d_m_e_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų įrašų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxylink{classvector_class}{vector\+Class}    }\\\cline{1-3}
+\endhead
+\PBS\centering 100.\+000   &\PBS\centering 0.\+736306 seconds.   &\PBS\centering 0.\+882708 seconds.    \\\cline{1-3}
+\PBS\centering 1.\+000.\+000   &\PBS\centering 7.\+33968 seconds.   &\PBS\centering 7.\+32049 seconds.    \\\cline{1-3}
+\PBS\centering 10.\+000.\+000   &\PBS\centering 72.\+7425 seconds.   &\PBS\centering 70.\+5485 seconds.   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{System}{System}}\label{md__r_e_a_d_m_e_autotoc_md8}
+All the test were ran on {\ttfamily ryzen 5 5600x}, {\ttfamily 32gb ddr4 3600mhz}, {\ttfamily rtx 4060}, {\ttfamily 1m.\+2 samsung ssd}. \hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{vector\+Class Functions}{vector\+Class Functions}}\label{md__r_e_a_d_m_e_autotoc_md9}
+This part outlines some of the {\ttfamily functions} used in my custom {\ttfamily \doxylink{classvector_class}{vector\+Class}}. \hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{1. {\ttfamily push\+\_\+back}}{1. {\ttfamily push\+\_\+back}}}\label{md__r_e_a_d_m_e_autotoc_md10}
+{\bfseries{Code Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}vectorClass.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_push\_back()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass<int>}}\ myVec;}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(1);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(2);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(3);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass:\ "{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ myVec.size();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ myVec[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ test\_push\_back();}
+\DoxyCodeLine{\ \ \ \ system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{std::vector:\ 1\ 2\ 3\ }
+\DoxyCodeLine{vectorClass:\ 1\ 2\ 3\ }
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{\texorpdfstring{2. {\ttfamily operator\mbox{[}\mbox{]}}}{2. {\ttfamily operator\mbox{[}\mbox{]}}}}\label{md__r_e_a_d_m_e_autotoc_md11}
+{\bfseries{Code Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}vectorClass.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_operator\_index()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass<int>}}\ myVec;}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(10);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(20);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(30);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass:\ "{}}\ <<\ myVec[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ myVec[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ myVec[2]\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ test\_operator\_index();}
+\DoxyCodeLine{\ \ \ \ system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{std::vector:\ 10\ 20\ 30}
+\DoxyCodeLine{vectorClass:\ 10\ 20\ 30}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{3. {\ttfamily resize}}{3. {\ttfamily resize}}}\label{md__r_e_a_d_m_e_autotoc_md12}
+{\bfseries{Code Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}vectorClass.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_resize()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass<int>}}\ myVec;}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(1);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(2);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(3);}
+\DoxyCodeLine{\ \ \ \ myVec.resize(5);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass\ (resize\ to\ 5):\ "{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ myVec.size();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ myVec[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ test\_resize();}
+\DoxyCodeLine{\ \ \ \ system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{std::vector\ (resize\ to\ 5):\ 1\ 2\ 3\ 0\ 0\ }
+\DoxyCodeLine{vectorClass\ (resize\ to\ 5):\ 1\ 2\ 3\ 0\ 0\ }
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{\texorpdfstring{4. {\ttfamily at}}{4. {\ttfamily at}}}\label{md__r_e_a_d_m_e_autotoc_md13}
+{\bfseries{Code Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}vectorClass.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_at()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass<int>}}\ myVec;}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(100);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(200);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(300);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass:\ "{}}\ <<\ myVec.at(1)\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass:\ "{}}\ <<\ myVec.at(3)\ <<\ std::endl;\ \textcolor{comment}{//\ This\ will\ throw}}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::out\_of\_range\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass\ out\_of\_range\ exception:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ test\_at();}
+\DoxyCodeLine{\ \ \ \ system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{std::vector:\ 200}
+\DoxyCodeLine{std::vector\ out\_of\_range\ exception:\ vector::\_M\_range\_check:\ \_\_n\ (which\ is\ 3)\ >=\ this-\/>size()\ (which\ is\ 3)}
+\DoxyCodeLine{vectorClass:\ 200}
+\DoxyCodeLine{vectorClass\ out\_of\_range\ exception:\ Index\ out\ of\ range}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{\texorpdfstring{5. {\ttfamily insert}}{5. {\ttfamily insert}}}\label{md__r_e_a_d_m_e_autotoc_md14}
+{\bfseries{Code Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}vectorClass.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_insert()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classvector_class}{vectorClass<int>}}\ myVec;}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(1);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(2);}
+\DoxyCodeLine{\ \ \ \ myVec.push\_back(4);}
+\DoxyCodeLine{\ \ \ \ myVec.insert(2,\ 3);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}vectorClass:\ "{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ myVec.size();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ myVec[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ test\_insert();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{std::vector:\ 1\ 2\ 3\ 4\ }
+\DoxyCodeLine{vectorClass:\ 1\ 2\ 3\ 4\ }
+
+\end{DoxyCode}
+ 
