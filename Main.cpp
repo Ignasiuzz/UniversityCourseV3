@@ -4,13 +4,19 @@
 //g++ -o Program Main.cpp Studentas.cpp
 
 int main() {
-    cout << "---------------------------------------- " << endl;
+    cout << "----------------------------------------- " << endl;
     int mode = NumberVerification("Manual input mode   [1]\nRead from file mode [2]\nFile Generator      [3]\nInput: ", 1, 3);
 
     if (mode == 1) {
         manualmode();
     } 
     else if (mode == 2) {
+        cout << "----------------------------------------- " << endl;
+        cout << "Choose how many students you want to read: " << endl;
+        int int_temp = NumberVerification("10000_GeneratedStudents.txt  [1]\n100000_GeneratedStudents.txt [2]\nInput: ", 1, 2);
+        if (int_temp = 1)
+        readingmode("10000_GeneratedStudents.txt");
+        else
         readingmode("100000_GeneratedStudents.txt");
     }
     else if (mode == 3){
@@ -54,6 +60,7 @@ void readingmode(const string& fileName){
     // Stabdomas skaiciuojamas laikas
     auto stop = high_resolution_clock::now();
     chrono::duration<double> diff = stop - start;
+    cout << "----------------------------------------- " << endl;
     cout << "Failo nuskaitymas! File reading took " << diff.count() << " seconds." << endl;
 
     int int_temp = NumberVerification("Studentu dalijimas i dvi grupes\n1 Strategija [1]\n2 Strategija [2]\n3 Strategija [3]\nIvestis: ", 1, 3);
@@ -127,7 +134,7 @@ void input1(Studentas& duom) {
     duom.setPavarde(temp);
 
     int_temp = NumberVerification("Iveskite studento namu darbu kieki (n): ", 1);
-    vector<double> namudarbas;
+    vectorClass<double> namudarbas;
     for (int i = 0; i < int_temp; i++) {
         int int_temp = NumberVerification("Iveskite namu darbo rezultata: ", 1, 10);
         namudarbas.push_back(int_temp);
@@ -148,7 +155,7 @@ void input2(Studentas& duom) {
     cin >> temp;
     duom.setPavarde(temp);
 
-    vector<double> namudarbas;
+    vectorClass<double> namudarbas;
 
     do {
         int_temp = NumberVerification("Iveskite studento namu darbu kieki (n): ", 1);
@@ -171,7 +178,7 @@ void input3(Studentas& duom, int n) {
 
     duom.setVardas(NameArray[rand() % NameArray.size()]);
     duom.setPavarde(SurnameArray[rand() % SurnameArray.size()]);
-    vector<double> namudarbas;
+    vectorClass<double> namudarbas;
     for (int i = 0; i < n; i++) {
         namudarbas.push_back(rand() % 10);
     }
@@ -191,7 +198,7 @@ void OutputBy(const vector<Studentas>& student) {
     else {
         file = "Nuskriaustukai";
     }
-
+    
     int placeholder = NumberVerification("Sort by:\nVardas   [1]\nPavarde  [2]\nVidurkis [3]\nMediana  [4]\nInput: ", 1, 4);
     if ( placeholder == 1 ) {
     auto start = high_resolution_clock::now();
@@ -393,7 +400,6 @@ void filegeneration(){
 void SplitVector(const vector<Studentas>& student){
     auto start = high_resolution_clock::now();
 
-    cout << "Lygtais kazkas veikia";
     vector<Studentas> nuskriaustukai;
     vector<Studentas> kietiakiai;
     for (const auto& duom : student) {
@@ -407,6 +413,7 @@ void SplitVector(const vector<Studentas>& student){
 
     auto stop = high_resolution_clock::now();
     chrono::duration<double> diff = stop - start;
+    cout << "----------------------------------------- " << endl;
     cout << "Studentu skirstymas i dvi grupes! Student sorting to two groups took " << diff.count() << " seconds." << endl;
 
     OutputBy(kietiakiai);
@@ -430,6 +437,7 @@ void SplitVector2(vector<Studentas>& student) {
 
     auto stop = high_resolution_clock::now();
     chrono::duration<double> diff = stop - start;
+    cout << "----------------------------------------- " << endl;
     cout << "Studentu skirstymas i dvi grupes! Student sorting to two groups took " << diff.count() << " seconds." << endl;
 
     OutputBy(student);
@@ -457,6 +465,7 @@ void SplitVector3(vector<Studentas>& student) {
 
     auto stop = high_resolution_clock::now();
     chrono::duration<double> diff = stop - start;
+    cout << "----------------------------------------- " << endl;
     cout << "Studentu skirstymas i dvi grupes! Student sorting to two groups took " << diff.count() << " seconds." << endl;
 
     OutputBy(student);

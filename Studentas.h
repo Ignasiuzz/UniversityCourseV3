@@ -3,19 +3,19 @@
 
 #include <algorithm>
 #include <string>
-#include <vector>
+#include "vectorClass.h"
 #include <iostream>
 #include "Zmogus.h"
 
 class Studentas : public Zmogus{
 private:
     double egzaminas_;
-    std::vector<double> namudarbas_;
+    vectorClass<double> namudarbas_;
 
 public:
     // Default konstruktoriai
     Studentas() : Zmogus(), egzaminas_(0), namudarbas_({}) {}
-    Studentas(const std::string& vardas, const std::string& pavarde, double egzaminas, const std::vector<double>& namudarbas) : Zmogus(vardas, pavarde), egzaminas_(egzaminas), namudarbas_(namudarbas) {}
+    Studentas(const std::string& vardas, const std::string& pavarde, double egzaminas, const vectorClass<double>& namudarbas) : Zmogus(vardas, pavarde), egzaminas_(egzaminas), namudarbas_(namudarbas) {}
 
     // Rule of Five
     ~Studentas();
@@ -28,13 +28,13 @@ public:
     std::string Vardas() const { return Vardas_; }
     std::string Pavarde() const { return Pavarde_; }
     double Egzaminas() const { return egzaminas_; }
-    std::vector<double> Namudarbas() const { return namudarbas_; }
+    vectorClass<double> Namudarbas() const { return namudarbas_; }
 
     // Set'eriai
     void setVardas(const std::string& vardas);
     void setPavarde(const std::string& pavarde);
     void setEgzaminas(double egzaminas);
-    void setNamudarbas(const std::vector<double>& namudarbas);
+    void setNamudarbas(const vectorClass<double>& namudarbas);
     std::istream& readStudent(std::istream&);
 
     // Calculations
@@ -42,8 +42,8 @@ public:
     friend double GalutinisMed(const Studentas& duom);
     
     // Static functions for calculations
-    static double Vidurkis(const std::vector<double>& namudarbas);
-    static double Mediana(const std::vector<double>& namudarbas);
+    static double Vidurkis(const vectorClass<double>& namudarbas);
+    static double Mediana(const vectorClass<double>& namudarbas);
 
     // Virtualios funkcijos deklaracija, kad klase Zmogus butu abstrakti
     virtual void doSomething();

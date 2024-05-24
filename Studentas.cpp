@@ -11,20 +11,20 @@ void Studentas::setPavarde(const std::string& pavarde) {
 void Studentas::setEgzaminas(double egzaminas) {
     egzaminas_ = egzaminas;
 }
-void Studentas::setNamudarbas(const std::vector<double>& namudarbas) {
+void Studentas::setNamudarbas(const vectorClass<double>& namudarbas) {
     namudarbas_ = namudarbas;
 }
 
 // Galutinio vidurkio skaiciavimas
-double Studentas::Vidurkis(const std::vector<double>& namudarbas) {
+double Studentas::Vidurkis(const vectorClass<double>& namudarbas) {
     double sum = 0;
     for (double grade : namudarbas) {
         sum += grade;
     }
     return sum / namudarbas.size();
 }
-double Studentas::Mediana(const std::vector<double>& namudarbas) {
-    std::vector<double> sortedVector = namudarbas;
+double Studentas::Mediana(const vectorClass<double>& namudarbas) {
+    vectorClass<double> sortedVector = namudarbas;
     std::sort(sortedVector.begin(), sortedVector.end());
 
     if (sortedVector.size() % 2 == 0)
